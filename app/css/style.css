@@ -1,0 +1,32 @@
+body{
+	background: #000;
+}
+
+
+.banner {
+	width: 100%;
+	height: 1080px;
+	background: url("../images/banner.jpg") no-repeat;
+	background-position: center;
+}
+
+.seckill-container{
+	width: 100%;
+	height: 855px;
+	background: url("../images/seckill_bg.jpg") no-repeat;
+	background-position: center;
+}
+
+.buy-container{
+	width: 100%;
+	height: 1058px;
+	background: url("../images/buy_bg.jpg") no-repeat;
+	background-position: center;
+}
+
+.winAwards-container{
+	width: 100%;
+	height: 777px;
+	background: url("../images/winAwards_bg.jpg") no-repeat;
+	background-position: center;
+}
