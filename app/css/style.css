@@ -1,50 +1,433 @@
+*{
+    box-sizing: border-box;
+}
 body{
+	min-width: 990px;
 	background: #000;
+	font-size: 14px;
+	font-family: 'Hiragino Sans GB','Microsoft Yahei';
+	color: #333;
+}
+.clearfix:after {
+    content: '\20';
+    clear: both;
+    height: 0;
+    display: block;
+    overflow: hidden;
+    zoom: 1;
+}
+.vertical-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
 }
 
+.vertical-container:before {
+    content: " ";
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+}
+
+.vertical-middle {
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 100% 100%;
+}
+ul{
+	margin: 0;
+	padding:0;
+	list-style: none;
+}
+
+.container{
+	width: 990px;
+}
+nav{
+	position: relative;
+	width: 1920px;
+	height: 74px;
+	background: url("../images/nav.jpg") no-repeat center;
+	z-index: 100;
+}
 
 .banner {
-	width: 100%;
-	height: 1080px;
-	background: url("../images/banner.jpg") no-repeat;
-	background-position: center;
+	position: relative;
+	margin: 0 auto;
+	width: 1920px;
+	height: 1007px;
+	background: url("../images/banner.jpg") no-repeat center;
 }
-.banner-soundWave{
-	position: absolute;
-	top: 410px;
-	width: 100%;
+.banner-layer-1-hdphones{
+	position: relative;
+	top: -80px;
+	width: 1900px;
+	height: 354px;
+	background: url("../images/banner/headphones_cross.png") no-repeat center;
+}
+.banner-layer-1-waves{
+	position: relative;
+	top: -5px;
+	width: 1920px;
 	height: 200px;
-	background: url("../images/banner/soundWave.png") no-repeat;
-	background-position: center;
-	background-size: 100%;
+	background: url("../images/banner/soundWave.png") no-repeat center;
 }
-.banner-sound{
+.banner-layer-1-sounds{
+	position: relative;
+	top:-195px;
+	margin: 0 auto;
+	width: 1180px;
+	height: 193px;
+}
+.banner-soundLeft{
 	position: absolute;
-	top:500px;
-	width: 1218px;
-	height: 311px;
-	background: url("../images/banner/sound.png") no-repeat;
-	background-position: center;
-	background-size: 100%;
+	left: 0;
+	width: 200px;
+	height: 247px;
+	background: url("../images/banner/soundLeft.png") no-repeat center;
+}
+.banner-soundRight{
+	position: absolute;
+	right: 0;
+	width: 200px;
+	height: 261px;
+	background: url("../images/banner/soundRight.png") no-repeat center;
 }
 
+.banner-layer-2{
+	position: absolute;
+	top: -30px;
+	width: 100%;
+	text-align: center;
+}
+.banner-layer-2-smog{
+	position: relative;
+	margin: 0 auto;
+	width: 1290px;
+}
+.banner-layer-2-rsmog{
+	position: relative;
+	float: left;
+    margin-left: -4px;
+	width: 700px;
+	height: 695px;
+	background: url("../images/banner/redSmog.png") no-repeat center;
+}
+.banner-layer-2-bsmog{
+	float: left;
+    margin-left: -307px;
+	width: 900px;
+	height: 764px;
+	background: url("../images/banner/blueSmog.png") no-repeat center;
+}
+.banner-layer-2-hdphones{
+    position: absolute;
+    top: 3px;
+    right: 0;
+    bottom: 0;
+    left: -135px;
+    margin: auto;
+    width: 745px;
+    height: 524px;
+	background: url("../images/banner/headphones.png") no-repeat center;
+}
+.banner-layer-3{
+	position: absolute;
+	top: 210px;
+	width: 1920px;
+	text-align: center;
+}
+.banner-layer-3-topTitle{
+	margin-left: 385px;
+	width: 408px;
+	height: 103px;
+	background: url("../images/banner/topTitle.png") no-repeat center;
+}
+.banner-layer-3-title{
+	display: inline-block;
+	margin-top: -78px;
+	width: 1050px;
+	// text-align: center;
+}
+.banner-layer-3-titleLeft{
+	float: left;
+	// display: inline-block;
+	margin-left: -81px;
+	width: 495px;
+	height: 357px;
+	background: url("../images/banner/titleLeft.png") no-repeat center;
+}
+.banner-layer-3-titleRight{
+	position: relative;
+	float: right;
+	margin-right: -45px;
+	width: 547px;
+	height: 344px;
+	background: url("../images/banner/titleRight.png") no-repeat center;
+	z-index: 100;
+}
+
+.banner-layer-4{
+    position: absolute;
+    width: 1920px;
+    bottom: 35px;
+	text-align: center;
+	z-index: 100;
+}
+.banner-layer-4-subTitle{
+	display: inline-block;
+	margin-bottom: 30px;
+	width: 834px;
+	height: 147px;
+	background: url("../images/banner/subTitle.png") no-repeat center;
+}
+.banner-layer-4-q{
+	display: inline-block;
+	width: 241px;
+	height: 161px;
+}
+.banner-layer-4-q1 {
+	background: url("../images/yhq001.png") no-repeat;
+}
+.banner-layer-4-q2{
+	background: url("../images/yhq002.png") no-repeat;
+}
+.banner-layer-4-q3{
+	background: url("../images/yhq003.png") no-repeat;
+}
+.banner-layer-4-q4{
+	background: url("../images/yhq004.png") no-repeat;
+}
+.banner-layer-5{
+	position: absolute;
+	bottom: 77px;
+	width: 1920px;
+	text-align: center;
+}
+.banner-layer-5-stars{
+	display: inline-block;
+    margin-right: -110px;
+	width: 904px;
+	height: 770px;
+}
+.banner-layer-5-luhan{
+	background: url("../images/banner/luhan.png") no-repeat;
+}
 .seckill-container{
-	width: 100%;
+	position: relative;
+	width: 1920px;
 	height: 855px;
-	background: url("../images/seckill_bg.jpg") no-repeat;
+	background: url("../images/seckill_bg.jpg") no-repeat center;
+}
+.seckill-tabs-container{
+	position: relative;
+    top: 112px;
+    margin: 0 auto;
+}
+.seckill-tabs li, .seckill-tabs-contents li, .buy-items-container li{
+	float: left;
+	width: 247.5px;
+    padding: 0px 3.75px;
+}
+.seckill-status{
+	display: block;
+	width: 100%;
+	height: 60px;
+	text-decoration: none;
+	text-align: center;
+}
+.s-timeSlot{
+	margin: 0;
+	height: 34px;
+	font-size: 24px;
+	line-height: 34px;
+	color: #d2d2d2;
+}
+.s-end, .s-ing, .s-will{
+    display: block;
+    font-style: inherit;
+    line-height: 20px;
+}
+.s-end, .s-will{
+   	color: #b0b5ba;
+}
+.s-ing{
+	color: #fff;
+}
+.s-ing, .s-will{
+	margin-left: -8px;
+}
+.sred .s-timeSlot{
+	color: #fff;
+}
+.sgreen{
+	background: url("../images/seckill/seckill_green.jpg") no-repeat;
+}
+.sred{
+	background: url("../images/seckill/seckill_red.jpg") no-repeat;
+}
+.s-item{
+	margin: 3px 0 5px;
+	padding: 10px;
+	width: 240px;
+	height: 300px;
+	background: url("../images/seckill/s-item_bg.jpg") no-repeat;
+}
+.s-item-img-wrap{
+	position: relative;
+	width: 216px;
+	height: 176px;
+	overflow: hidden;
+}
+.remain-time{
+    position: absolute;
+    bottom: 4px;
+    padding: 2px;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    color: #fff;
+    font-size: 13px;
+}
+.remain-time em{
+    display: block;
+    padding-left: 20px;
+    font-style: inherit;
+    background: #0000008c;
+}
+.s-item-name{
+	margin: 7px 0 13px;
+	text-align: center;
+	color: #3b3b3b;
+}
+.s-item-price{
+	margin-bottom: 14px;
+	text-align: center;
+	color: #ff0014;
+    font-weight: bold;
+    font-size: 18px;
+}
+.s-item-price-now{
+	font-size: 26px;
+	line-height: 26px;
+}
+.seckill-btn{
+	display: block;
+	margin: 0 auto;
+	width: 140px;
+	height: 28px;
+	text-decoration: none;
+	text-align: center;
+	line-height: 28px;
+	font-size: 16px;
+	color: #fff;
+}
+.seckill-btn-sale{
+	background: url('../images/seckill/seckill_btn_red.png') no-repeat;
+}
+.seckill-btn-salout{
+	background: url('../images/seckill/seckill_btn_black.png') no-repeat;
+}
+.s-item-saleout-cover{
+	position: absolute;
+	top: 0;
+	width: 216px;
+	height: 176px;
+	background-color: #0000008c;
+	background-image: url('../images/seckill/seckill_saleout.png');
+	background-repeat: no-repeat;
 	background-position: center;
 }
 
+.seckill-tabs-contents li:hover .s-item-img-wrap:after{
+	display: block;
+	position: absolute;
+	top: 0;
+	content: " ";
+	width: 216px;
+	height: 176px;
+	background: url('../images/seckill/s-border.png') no-repeat;
+}
 .buy-container{
-	width: 100%;
+	width: 1920px;
 	height: 1058px;
-	background: url("../images/buy_bg.jpg") no-repeat;
-	background-position: center;
+	background: url("../images/buy_bg.jpg") no-repeat center;
 }
-
+.buy-items-container{
+    position: relative;
+    top: 120px;
+    margin: 0 auto;
+}
+.buy-item{
+	position: relative;
+	padding: 12px 30px 15px;
+	height: 300px;
+	background: #fff;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+.buy-item:hover{
+	border: 2px solid #ff0014;
+}
+.buy-item-saling{
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	display: block;
+	padding: 3px 7px;
+	color: #fff;
+	background: #ff0014;
+	font-style: inherit;
+}
+.b-item-wrap{
+	position: relative;
+	height: 176px;
+}
+.begin-time{
+	position: absolute;
+	bottom: 0;
+	left: -30px;
+	width: 82px;
+	height: 19px;
+	background: url('../images/buy/buy_sale_begin.png') no-repeat;
+}
+.b-item-price{
+	margin: 17px 0 10px;
+	text-align: center;
+	font-size: 13px;
+	font-weight: bold;
+	color: #ff0014;
+}
+.b-item-price-now{
+	font-size: 16px;
+}
+.b-item-name{
+	margin: 0 0 9px;
+	font-size: 13px;
+}
+.buy-btn{
+	display: block;
+	width: 180px;
+	height: 28px;
+	line-height: 28px;
+	color:#fff;
+	font-size: 16px;
+	text-decoration: none;
+}
+.buy-btn-buy{
+	background: url('../images/buy/buy_btn_red.png') no-repeat;
+}
+.buy-btn-add{
+	background: url('../images/buy/buy_btn_green.png') no-repeat;
+	
+}
 .winAwards-container{
-	width: 100%;
+	width: 1920px;
 	height: 777px;
-	background: url("../images/winAwards_bg.jpg") no-repeat;
-	background-position: center;
+	background: url("../images/winAwards_bg.jpg") no-repeat center;
 }
