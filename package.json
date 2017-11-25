@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --hot --inline"
+    "start": "webpack-dev-server --hot --inline --host 192.168.123.41",
+    "build": "webpack --progress --profile --colors --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "html-withimg-loader": "^0.1.16",
     "normalize.css": "^7.0.0"
   },
   "devDependencies": {
