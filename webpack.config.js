@@ -8,8 +8,6 @@ var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(ROOT_PATH, 'app/js');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
-
-
 module.exports = {
 	// 入口文件名称
 	entry: {
@@ -19,6 +17,7 @@ module.exports = {
 	// 输出文件名称
 	output: {
 		path: BUILD_PATH,
+		// publicPath: BUILD_PATH + '/assets/',
 		filename: '[name].bundle.js',
 	},
 	module: {
@@ -37,6 +36,9 @@ module.exports = {
 					name: 'images/[name].[ext]'
 				}
 			}]
+		}, {　　　　　　
+			test: /\.html$/,
+			loader: 'html-withimg-loader'　　　　
 		}]
 	},
 	plugins: [

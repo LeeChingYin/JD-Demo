@@ -1,5 +1,6 @@
 import 'normalize.css';
 import '../css/style.css';
+import '../tpl/index.html';
 
 // banner 人物循环播放
 var sliders = function() {
