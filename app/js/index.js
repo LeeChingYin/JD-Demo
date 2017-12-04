@@ -202,7 +202,7 @@ function lazyloadYHQ(_scrollPosition) {
 	}
 }
 
-// 懒加载“整点秒杀”，“爆款必备”，“下单实时赢大奖”
+// 懒加载“优惠券”，“整点秒杀”，“爆款必备”，“下单实时赢大奖”
 function lazyload() {
 	var scrollTop = $(window).scrollTop();
 	var scrollPosition = scrollTop + $(window).height();
