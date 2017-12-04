@@ -12,6 +12,7 @@ body{
 	font-size: 14px;
 	font-family: 'Hiragino Sans GB','Microsoft Yahei';
 	color: #333;
+	overflow-x: hidden;
 }
 .clearfix:after {
     content: '\20';
@@ -29,7 +30,9 @@ ul{
 	padding:0;
 	list-style: none;
 }
-
+img{
+	width: 100%;
+}
 .container{
 	width: 990px;
 }
@@ -37,7 +40,6 @@ nav{
 	position: relative;
 	width: 1920px;
 	height: 74px;
-	background: url("../images/nav.jpg") no-repeat center;
 	z-index: 100;
 }
 
@@ -48,23 +50,9 @@ nav{
 	height: 1007px;
 	background: url("../images/banner.jpg") no-repeat center;
 }
-.banner-layer-1-hdphones{
-	position: relative;
-	top: -80px;
-	width: 1900px;
-	height: 354px;
-	background: url("../images/banner/headphones_cross.png") no-repeat center;
-}
-.banner-layer-1-waves{
-	position: relative;
-	top: -5px;
-	width: 1920px;
-	height: 200px;
-	background: url("../images/banner/soundWave.png") no-repeat center;
-}
 .banner-layer-1-sounds{
 	position: relative;
-	top:-195px;
+	top: 355px;
 	margin: 0 auto;
 	width: 1180px;
 	height: 193px;
@@ -90,8 +78,6 @@ nav{
 	left: 0;
 	width: 200px;
 	height: 247px;
-	background: url("../images/banner/soundLeft.png") no-repeat center;
-
 }
 
 .banner-soundRight{
@@ -99,7 +85,6 @@ nav{
 	right: 0;
 	width: 200px;
 	height: 261px;
-	background: url("../images/banner/soundRight.png") no-repeat center;
 }
 
 .banner-layer-2{
@@ -113,23 +98,6 @@ nav{
 	margin: 0 auto;
 	width: 1290px;
 }
-.banner-layer-2-rsmog{
-	position: relative;
-	float: left;
-    margin-left: -4px;
-	width: 700px;
-	height: 695px;
-	background: url("../images/banner/redSmog.png") no-repeat center;
-
-}
-
-.banner-layer-2-bsmog{
-	float: left;
-    margin-left: -307px;
-	width: 900px;
-	height: 764px;
-	background: url("../images/banner/blueSmog.png") no-repeat center;
-}
 .banner-layer-2-hdphones{
     position: absolute;
     top: 3px;
@@ -139,7 +107,6 @@ nav{
     margin: auto;
     width: 745px;
     height: 524px;
-	background: url("../images/banner/headphones.png") no-repeat center;
 		
 	-webkit-animation-name:'hdphonesShake';
 	-webkit-animation-duration: .3s;
@@ -166,7 +133,6 @@ nav{
 	margin-left: 385px;
 	width: 408px;
 	height: 103px;
-	background: url("../images/banner/topTitle.png") no-repeat center;
 }
 .banner-layer-3-title{
 	display: inline-block;
@@ -179,7 +145,6 @@ nav{
 	margin-left: -300px;
 	width: 495px;
 	height: 357px;
-	background: url("../images/banner/titleLeft.png") no-repeat center;
 }
 .banner-layer-3-titleRight{
 	display: none;
@@ -188,7 +153,6 @@ nav{
 	margin-right: -200px;
 	width: 547px;
 	height: 344px;
-	background: url("../images/banner/titleRight.png") no-repeat center;
 	z-index: 100;
 }
 
@@ -204,24 +168,11 @@ nav{
 	margin-bottom: 30px;
 	width: 834px;
 	height: 147px;
-	background: url("../images/banner/subTitle.png") no-repeat center;
 }
 .banner-layer-4-q{
 	display: inline-block;
 	width: 241px;
 	height: 161px;
-}
-.banner-layer-4-q1 {
-	background: url("../images/banner/yhq001.png") no-repeat;
-}
-.banner-layer-4-q2{
-	background: url("../images/banner/yhq002.png") no-repeat;
-}
-.banner-layer-4-q3{
-	background: url("../images/banner/yhq003.png") no-repeat;
-}
-.banner-layer-4-q4{
-	background: url("../images/banner/yhq004.png") no-repeat;
 }
 .banner-layer-5{
 	position: absolute;
@@ -235,7 +186,7 @@ nav{
 	width: 777px;
 	height: 770px;
 }
-.banner-layer-5-luhan{
+/*.banner-layer-5-luhan{
 	background: url("../images/banner/luhan.png") no-repeat;
 }
 .banner-layer-5-william{
@@ -249,12 +200,12 @@ nav{
 }
 .banner-layer-5-Cluo{
 	background: url("../images/banner/Cluo.png") no-repeat;
-}
+}*/
 .seckill-container{
 	position: relative;
 	width: 1920px;
 	height: 855px;
-	background: url("../images/seckill_bg.jpg") no-repeat center;
+	/*background: url("../images/seckill_bg.jpg") no-repeat center;*/
 }
 .seckill-tabs-container{
 	position: relative;
@@ -283,13 +234,16 @@ nav{
 	line-height: 34px;
 	color: #d2d2d2;
 }
-.sgreen em{
+.sgreen em, .sred em{
     display: block;
     margin-top: 1px;
 	margin-left: -8px;
     font-style: inherit;
     line-height: 20px;
     color: #b0b5ba;
+}
+.sgreen em{
+	color: #b0b5ba;
 }
 .sred em{
 	color: #fff;
@@ -595,3 +549,4 @@ nav{
     height: 25px;
     cursor: pointer;
 }
+

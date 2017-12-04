@@ -1,6 +1,7 @@
 var path = require('path');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 var jquery = require('jquery');
 var webpack = require('webpack');
 
@@ -32,7 +33,7 @@ module.exports = {
 			use: [{
 				loader: 'url-loader',
 				options: {
-					limit: 40000,
+					limit: 1024,
 					name: 'images/[name].[ext]'
 				}
 			}]
@@ -56,7 +57,8 @@ module.exports = {
 		// 这里使用内置插件生成单独的 vendor file
 		new webpack.optimize.CommonsChunkPlugin({
 			name: "vendor"
-		})
+		}),
+		new UglifyJsPlugin()
 	],
 	devtool: 'inline-source-map'
 };
