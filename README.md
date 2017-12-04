@@ -27,7 +27,7 @@
 
 
 以上的优化完成后，Chrome设置限速200Kb/s情况下的结果：
-![](/Users/leechingyin/Sites/JD/app/images/optimizeResult.jpg)
+![](https://github.com/LeeChingYin/JD-demo/blob/master/app/images/optimizeResult.jpg)
 
 优化结果仍然有待改善，主要就是图片方面有点大...
 
