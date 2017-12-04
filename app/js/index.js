@@ -192,7 +192,7 @@ function lazyload() {
 	var n = 0;
 
 	for (let i = n; i < sections.length; i++) {
-		if (sections.eq(i).parent().offset().top < scrollPosition) {
+		if (sections.eq(i).offset().top < scrollPosition) {
 			getSeckill();
 
 			n++;
@@ -214,7 +214,7 @@ function getSeckill() {
 }
 
 
-$(window).on('scroll', throttle(getSeckill, 500, 1000));
+$(window).on('scroll', throttle(lazyload, 500, 1000));
 
 // var showSection = lazyload();
 // lazyload();          //初始化首页的页面图片
