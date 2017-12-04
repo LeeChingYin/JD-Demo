@@ -469,16 +469,11 @@ body{
     overflow: hidden;
     zoom: 1;
 }
-.hide{
-	display: none;
-}
+
 ul{
 	margin: 0;
 	padding:0;
 	list-style: none;
-}
-img{
-	width: 100%;
 }
 .container{
 	width: 990px;
@@ -633,26 +628,10 @@ nav{
 	width: 777px;
 	height: 770px;
 }
-/*.banner-layer-5-luhan{
-	background: url("../images/banner/luhan.png") no-repeat;
-}
-.banner-layer-5-william{
-	background: url("../images/banner/william.png") no-repeat;
-}
-.banner-layer-5-wangfeng{
-	background: url("../images/banner/wangfeng.png") no-repeat;
-}
-.banner-layer-5-SNH48{
-	background: url("../images/banner/SNH48.png") no-repeat;
-}
-.banner-layer-5-Cluo{
-	background: url("../images/banner/Cluo.png") no-repeat;
-}*/
 .seckill-container{
 	position: relative;
 	width: 1920px;
 	height: 855px;
-	/*background: url("../images/seckill_bg.jpg") no-repeat center;*/
 }
 .seckill-tabs-container{
 	position: relative;
@@ -810,7 +789,6 @@ nav{
 .buy-container{
 	width: 1920px;
 	height: 1058px;
-	background: url(images/buy_bg.jpg) no-repeat center;
 }
 .buy-items-container{
     position: relative;
@@ -907,9 +885,9 @@ nav{
 	position: relative;
 	width: 1920px;
 	height: 777px;
-	background: url(images/winAwards_bg.jpg) no-repeat center;
 }
-.winAwards-content{
+.lazyload-container .winAwards-content{
+	display: none;
 	position: relative;
 	top: 207px;
 	margin: 0 auto;
@@ -924,7 +902,6 @@ nav{
 	position: relative;
 	width: 0;
 	height: 10px;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAKBAMAAACH/Cl5AAAAD1BMVEX7Xzn6Uzf5RjX4PTT4NzOJXoh4AAAAGElEQVQI12MwYFBgEGAAAiCpAOQ5MDgAAAoUAUHU+MKpAAAAAElFTkSuQmCC) repeat;
 }
 .process-block{
     position: absolute;
@@ -932,7 +909,6 @@ nav{
     margin-left: -75px;
 	width: 137px;
 	height: 83px;
-	background: url(images/process_block.png) repeat;
 	z-index: 100;
 	text-align: center;
 }
@@ -968,7 +944,6 @@ nav{
 	margin: 17px auto 0;
 	width: 146px;
 	height: 76px;
-	background: url(images/w_btn.png) no-repeat center;
 }
 .w-shuoming{
 	display: none;

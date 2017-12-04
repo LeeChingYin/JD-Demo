@@ -2,6 +2,7 @@ var path = require('path');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+var ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 var jquery = require('jquery');
 var webpack = require('webpack');
 
@@ -58,7 +59,10 @@ module.exports = {
 		new webpack.optimize.CommonsChunkPlugin({
 			name: "vendor"
 		}),
-		new UglifyJsPlugin()
+		new UglifyJsPlugin(),
+		new ScriptExtHtmlWebpackPlugin({
+			defaultAttribute: 'defer'
+		})
 	],
 	devtool: 'inline-source-map'
 };

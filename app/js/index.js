@@ -102,6 +102,7 @@ var tabShow = function() {
 	})
 }
 
+// 动态生成tab的items
 function getSTab(_tabId) {
 	var tpl = '<li><div class="s-item"><div class="s-item-img-wrap"><img src="../app/images/seckill/seckill_headphone.jpg" alt=""><div class="remain-time"> <em>剩余时间：</em></div></div><p class="s-item-name">FIIL头戴式无线降噪耳机 魔影红</p><div class="s-item-price"><span>秒杀价:</span><span class="s-item-price-now">￥1999</span></div><a href="javascript:void(0)" class="seckill-btn seckill-btn-sale">立即秒杀</a></div></li>';
 
@@ -127,6 +128,10 @@ var setProcess = function(_data) {
 // 活动规则
 var rulesShow = function() {
 	$(".w-btn").click(function() {
+		if ($('.w-shuoming img').css('background-image') == 'none') {
+			var _src = $('.w-shuoming img').attr('data-src');
+			$('.w-shuoming img').attr("src", _src);
+		}
 		$('.w-shuoming').show();
 	});
 
@@ -184,6 +189,20 @@ function throttle(func, wait, mustRun) {
 	};
 };
 
+// 懒加载优惠券
+function lazyloadYHQ(_scrollPosition) {
+	if (850 < _scrollPosition) {
+		if (!$('.banner-layer-4-q').parent().attr('loadyhq')) {
+			$('.banner-layer-4-q').each(function() {
+				var _src = $(this).find('img').attr('data-src');
+				$(this).find('img').attr('src', _src);
+			});
+			$('.banner-layer-4-q').parent().attr('loadyhq', 'true');
+		}
+	}
+}
+
+// 懒加载“整点秒杀”，“爆款必备”，“下单实时赢大奖”
 function lazyload() {
 	var scrollTop = $(window).scrollTop();
 	var scrollPosition = scrollTop + $(window).height();
@@ -191,38 +210,70 @@ function lazyload() {
 	var sections = $('.lazyload-container');
 	var n = 0;
 
+	lazyloadYHQ(scrollPosition);
+
 	for (let i = n; i < sections.length; i++) {
 		if (sections.eq(i).offset().top < scrollPosition) {
-			getSeckill();
+
+			if (sections.eq(i).css('background-image') == 'none') {
+				var _src = sections.eq(i).attr('data-src');
+				sections.eq(i).css('background', 'url("' + _src + '") no-repeat center');
+
+				switch (n) {
+					case 0:
+						getSeckill();
+						break;
+					case 1:
+						getBuy();
+						break;
+					case 2:
+						getWinAwards();
+						break;
+				}
+			}
 
 			n++;
 		}
 	}
 }
 
-
+// “整点秒杀”
 function getSeckill() {
-
-	if ($('.seckill-container').css('background-image') == 'none') {
-		var _src = $('.seckill-container').attr('data-src');
-		$('.seckill-container').css('background', 'url("' + _src + '") no-repeat center');
-		tabShow();
-		setTabState();
-		setInterval(setTabState, 1200000);
-	}
-
+	tabShow();
+	setTabState();
+	setInterval(setTabState, 1200000);
 }
 
+// “爆款必备”
+function getBuy() {
+	var tpl = '<li><div class="buy-item"> <i class="buy-item-saling">直降</i><div class="b-item-wrap"><img src="../app/images/buy/buy_headphones.png" alt=""><div class="begin-time"></div></div><div class="b-item-price"><span>惊爆价:</span><span class="b-item-price-now">￥1???</span></div><p class="b-item-name">Meqafeis E30运动蓝牙耳机</p><a href="javascript:void(0)" class="buy-btn buy-btn-buy">立即购买</a></div></li>';
 
-$(window).on('scroll', throttle(lazyload, 500, 1000));
+	for (let i = 0; i < 12; i++) {
+		$('.buy-items-container').append(tpl);
+	}
+}
 
-// var showSection = lazyload();
-// lazyload();          //初始化首页的页面图片
-// $(window).on('scroll', throttle(lazyload, 500, 1000));
+//“下单实时赢大奖”
+function getWinAwards() {
+	var _pbgsrc = $('.process').attr('data-src');
+	$('.process').css('background', 'url("' + _pbgsrc + '")');
+
+	var _psrc = $('.process-block').attr('data-src');
+	$('.process-block').css('background', 'url("' + _psrc + '") no-repeat');
 
 
-$(function() {
+	var _witems = $('.winAwards-items').find('img');
 
+	_witems.each(function() {
+		var _imgSrc = $(this).attr('data-src');
+		$(this).attr('src', _imgSrc);
+	});
+
+	var _wbtnsrc = $('.w-btn').attr('data-src');
+	$('.w-btn').css('background', 'url("' + _wbtnsrc + '") no-repeat');
+
+
+	$('.winAwards-content').show();
 
 	var data = 0;
 	var countData = setInterval(function() {
@@ -234,7 +285,16 @@ $(function() {
 	}, 6000);
 
 	rulesShow();
+}
 
+$(window).on('scroll', throttle(lazyload, 500, 1000));
+
+var showSection = lazyload();
+lazyload(); //初始化首页的页面图片
+$(window).on('scroll', throttle(lazyload, 500, 1000));
+
+
+
+$(function() {
 	animate();
-
-})
+});
